@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Raina's Webpage #2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
     <style>
       body {
         background-color: #ffd0d7;
@@ -22,42 +24,42 @@
       }
 
       .bunny {
-        left: 400px; /* Adjusted left position for the bunny image */
+        left: 400px;
       }
 
       img.second {
-        right: 400px; /* Positioned on the opposite side of the bunny image */
+        right: 400px;
       }
 
       #defaultBlock {
         display: table;
         width: 100%;
-        margin-top: 50px; /* Adjusted margin for moving the columns down */
+        margin-top: 50px;
       }
 
       div {
         float: left;
         height: 470px;
-        width: 30%; /* Adjusted width for three columns */
+        width: 30%;
         padding: 10px;
-        margin: 10px; /* Added margin for spacing */
+        margin: 10px;
       }
 
       #block1 {
-        background-color: #e6cedd; /* Color for the first column */
+        background-color: #e6cedd;
       }
 
       #block2 {
-        background-color: #f1bdc9; /* Color for the second column */
+        background-color: #f1bdc9;
       }
 
       #block3 {
-        background-color: #e6ced1; /* Color for the third column */
+        background-color: #e6ced1;
       }
 
       h2 {
         text-align: center;
-        color: white; /* Text color for column headings */
+        color: white;
       }
     </style>
   </head>
@@ -76,11 +78,37 @@
         <iframe width="350" height="200" src="https://www.youtube.com/embed/hLvWy2b857I?si=qnBVlLBZzl_GVpY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div id="block3">
-        <h2>Title 3</h2>
-        <iframe src="p5.html" width="100%" height="100%" frameborder="0"></iframe>
+        <h2>p5.js Animation</h2>
+        <script>
+          var x = 450;
+          var y = 450;
+          function setup() {
+            createCanvas(900, 900);
+            background(0,0,0);
+          }
+          function draw() {
+            for (let i = 0; i < 100; i++){
+              stroke('green');
+              var corner = random(1,3);
+              corner = round(corner);
+              if (corner == 1){
+                x = (x + 450) / 2;
+                y = (y + 0) / 2;
+                point(x, y);
+              }
+              if (corner == 2){
+                x = (x + 900) / 2;
+                y = (y + 900) / 2;
+                point(x, y);
+              }
+              if (corner == 3){
+                x = (x + 0) / 2;
+                y = (y + 900) / 2;
+                point(x, y);
+              }
+            }
+          }
         </script>
-       
-         </script>
       </div>
     </main>
   </body>
